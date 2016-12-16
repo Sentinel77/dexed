@@ -350,6 +350,8 @@ void DexedAudioProcessor::setStateInformation(const void* source, int sizeInByte
     controllers.foot.parseConfig(root->getStringAttribute("footMod").toRawUTF8());
     controllers.breath.parseConfig(root->getStringAttribute("breathMod").toRawUTF8());
     controllers.at.parseConfig(root->getStringAttribute("aftertouchMod").toRawUTF8());
+
+    controllers.refresh();
     
     setEngineType(root->getIntAttribute("engineType", 1));
     monoMode = root->getIntAttribute("monoMode", 0);
